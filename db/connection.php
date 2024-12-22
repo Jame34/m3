@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost'; // 資料庫主機
+$host = '127.0.0.1'; // 資料庫主機
 $db   = 'knowledge_grap'; // 資料庫名稱
 $user = 'root'; // 使用者帳號
 $pass = ''; // 使用者密碼
