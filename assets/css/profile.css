@@ -1,0 +1,74 @@
+.profile-container {
+    display: flex;
+    justify-content: space-between; /* Ensure space between the left and right sections */
+    padding: 20px;
+    background-image: url('../images/background_image.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.left-section, .right-section {
+    width: 48%; /* Allocate space for each section */
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.left-section {
+    margin-right: 2%; /* Create space between the sections */
+}
+
+.right-section {
+    margin-left: 2%; /* Create space between the sections */
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-avatar {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.profile-info h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.profile-info p {
+    font-size: 24px;
+    color: #555;
+}
+
+.section h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.section ul {
+    padding-left: 24px;
+}
+
+.section li {
+    font-size: 24px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+}
