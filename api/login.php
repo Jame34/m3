@@ -5,32 +5,26 @@ require_once '../db/connection.php';
 $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
 
-if (empty($username) || empty($password)) {
-    echo "請輸入帳號和密碼！";
-    exit;
-}
+if ($username && $password) {
+    try {
+        // 從資料庫獲取使用者資料
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+        $stmt->execute(['username' => $username]);
+        $user = $stmt->fetch();
 
-try {
-    // 從資料庫獲取使用者資料
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
-    $stmt->execute(['username' => $username]);
-    $user = $stmt->fetch();
-
-    if ($user) {
-        // 使用 password_verify 驗證密碼
-        if (password_verify($password, $user['password'])) {
+        if ($user && $password === $user['password']) { // 直接比對明文密碼
             // 登入成功，儲存 Session
-            session_regenerate_id(true); // 防止 Session 固定攻擊
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             header('Location: ../index.php'); // 跳轉到首頁
             exit;
         } else {
-            echo "密碼驗證失敗！";
+            echo "帳號或密碼錯誤！";
         }
-    } else {
-        echo "找不到使用者！";
+    } catch (PDOException $e) {
+        die("登入失敗：" . $e->getMessage());
     }
-} catch (PDOException $e) {
-    die("登入失敗：" . $e->getMessage());
+} else {
+    echo "請輸入帳號和密碼！";
 }
+?>
