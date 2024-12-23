@@ -1,5 +1,5 @@
 <?php
-$host = '127.0.0.1'; // 資料庫主機
+$host = '172.105.225.93'; // 資料庫主機
 $db   = 'cbedtcnneq'; // 資料庫名稱
 $user = 'cbedtcnneq'; // 使用者帳號
 $pass = 'XeZNmc3aCE'; // 使用者密碼
