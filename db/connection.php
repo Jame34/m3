@@ -1,8 +1,8 @@
 <?php
 $host = '127.0.0.1'; // 資料庫主機
-$db   = 'knowledge_grap'; // 資料庫名稱
-$user = 'root'; // 使用者帳號
-$pass = ''; // 使用者密碼
+$db   = 'cbedtcnneq'; // 資料庫名稱
+$user = 'cbedtcnneq'; // 使用者帳號
+$pass = 'XeZNmc3aCE'; // 使用者密碼
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
