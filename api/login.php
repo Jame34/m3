@@ -17,7 +17,7 @@ try {
     $user = $stmt->fetch();
 
     if ($user) {
-        var_dump($user); // 除錯：檢查從資料庫獲取的資料
+        // 使用 password_verify 驗證密碼
         if (password_verify($password, $user['password'])) {
             // 登入成功，儲存 Session
             session_regenerate_id(true); // 防止 Session 固定攻擊
@@ -27,7 +27,6 @@ try {
             exit;
         } else {
             echo "密碼驗證失敗！";
-            var_dump($password, $user['password']); // 除錯：檢查密碼
         }
     } else {
         echo "找不到使用者！";
