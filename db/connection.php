@@ -14,7 +14,7 @@ $options = [
 
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (\PDOException $e) {
+} catch (PDOException $e) {
     die("資料庫連接失敗：" . $e->getMessage());
 }
 ?>
