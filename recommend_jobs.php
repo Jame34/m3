@@ -49,7 +49,7 @@ foreach ($user_skills as $skill) {
         <!-- Left Column: Skills Section -->
         <div class="col-md-5 mb-4">
             <div class="card shadow-lg">
-                <div class="card-header bg-primary text-white">
+                <div class="card-header">
                     <h4>你的技能</h4>
                 </div>
                 <div class="card-body">
@@ -65,7 +65,7 @@ foreach ($user_skills as $skill) {
         <!-- Right Column: Job Recommendations Section -->
         <div class="col-md-6 mb-4">
             <div class="card shadow-lg">
-                <div class="card-header bg-success text-white">
+                <div class="card-header">
                     <h4>推薦職缺</h4>
                 </div>
                 <div class="card-body">
